@@ -7,7 +7,7 @@ set salary=salary*1.1
 where job_id='SA_REP'
 AND extract(year from hire_date)>2005;
 --2. **Aggregate Functions**: Find the median salary for the 'IT_PROG' job in the "employees" table.
---help
+select median(salary) from employees where job_id='IT_PROG';
 --3. **Single Function (Date)**: List the employees in the "employees" table who have been hired in the last 365 days.
 select * from employees where extract(year from sysdate)-extract(year from hire_date)<1;
 --4. **Conversion Functions**: Convert the hire_date in the "employees" table to 'Day, DD-Month-YYYY' format.
