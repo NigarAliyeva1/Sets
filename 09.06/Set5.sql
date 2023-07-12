@@ -10,7 +10,7 @@ commit;
 select job_id, count(employee_id) from employees 
 group by job_id;
 --4. **Analytical Function**: Write a query using the RANK function to return the salaries and rank of each employee based on their salary within their department.
---help
+select department_id,salary, rank() over(partition by department_id order by salary) as sal_dep from employees;
 --5. **Set operator**: Write a query using UNION to return the job_ids from both the 'Jobs' and 'Job_History' tables.
 select job_id from jobs
 union
