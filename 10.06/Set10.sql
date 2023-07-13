@@ -1,8 +1,7 @@
 --Set10
 --1. **SELECT with Self JOIN**
 --Write a SQL statement to find pairs of employees who have the same job title.
-select * from employees;
---Help
+select e.*,j.job_title from employees e join jobs j on e.job_id=j.job_id order by j.job_id;
 --2. **SELECT with Aggregate Function and WHERE clause**
 --Write a SQL statement to find the total salary of employees whose department id is 30.
 select sum(salary) as "Total Salary" from employees where department_id=30;
