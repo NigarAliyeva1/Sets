@@ -12,5 +12,6 @@ select
 --4. (Correlated Subquery) Identify the total salary expenditure for each job title across the company.
 select sum(salary),job_id from employees group by job_id;
 --5. (Correlated Subquery) Calculate the number of managers and the total number of their subordinates across the company.
-select count(emp.employee_id), (select count(e.employee_id) from employees group by  from employees e join employees emp on e.manager_id=emp.employee_id
-group by emp.employee_id;
+select count(employee_id), (select count(e.employee_id) from employees e join employees emp on e.manager_id=emp.employee_id
+group by emp.employee_id) from employees;
+--help
