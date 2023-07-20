@@ -11,5 +11,6 @@ from employees
 where 5<(select avg(extract(year from sysdate)- extract(year from hire_date)) from employees) 
 group by department_id;
 --4. (WHERE/HAVING Subquery) Find departments where the number of subordinates per manager is above the company average.
-
+--help
 --5. (WHERE/HAVING Subquery) Find job titles where the maximum salary is higher than the average salary of all job titles.
+select job_title from employees e join jobs j on e.job_id=j.job_id  where e.salary>(select avg(salary) from employees);
